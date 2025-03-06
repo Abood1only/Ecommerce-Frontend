@@ -89,6 +89,7 @@ button {
   text-align: left;
   font-size: large;
   font-family: sans-serif, Arial;
+  border-style: hidden;
 }
 #table-headers {
   text-align: left;
