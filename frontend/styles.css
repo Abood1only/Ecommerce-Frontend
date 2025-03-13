@@ -74,7 +74,7 @@ button {
   font-family: sans-serif, Arial;
 }
 #item-description {
-  font-size: small;
+  font-size: medium;
   font-family: sans-serif, Arial;
   text-align: justify;
   text-decoration: double;
@@ -84,6 +84,30 @@ button {
   height: 400px;
   margin-left: 0px;
   align-items: left;
+}
+#current-price {
+  padding: 0%;
+  text-align: left;
+  font-family: sans-serif, Arial;
+  font-size: small;
+  font-weight: bold;
+  display: block;
+}
+#price-text {
+  padding: 0%;
+  text-align: left;
+  font-family: sans-serif, Arial;
+  font-size: small;
+  font-weight: bold;
+}
+#dropdown {
+  padding: 0%;
+  text-align: left;
+  font-family: sans-serif, Arial;
+  font-size: 85%;
+  position: relative;
+  display: inline-block;
+  background-color: antiquewhite;
 }
 #available-sizes {
   text-align: left;
