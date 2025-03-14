@@ -38,22 +38,13 @@
           <p id="price-text">Price</p>
           <p id="current-price">$0.00</p>
           <label for="product">Product:</label>
-          <select
-            name="dropdown"
-            id="dropdown"
-            onchange="UpdatePrice(this.value)"
-          >
-            <option id="option1" value="7.99">
-              EASY OFF Heavy Duty 12 oz $7.99
-            </option>
-            <option id="option2" value="4.99">
-              EASY OFF Light Duty 12 oz $4.99
-            </option>
+          <select id="dropdown" onchange="updatePrice(this.value)">
+            <==option id="option1" value="7.99"> EASY OFF Heavy Duty 12 oz $7.99
+            <==/option> <==option id="option2" value="4.99"> EASY OFF Light Duty
+            12 oz $4.99 <==/option>
           </select>
           <br /><br />
-          <button type="button" id="button" onclick="addToCart('dropdown')">
-            Add to Cart
-          </button>
+          <button id="button" onclick="addToCart()">Add to Cart</button>
         </div>
         <table>
           <thead>
