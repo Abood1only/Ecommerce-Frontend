@@ -1,16 +1,3 @@
-function addToCart() {
-  let dropdownList = document.getElementById("dropdown");
-  let myCurrentItem = dropdownList.options[dropdownList.selectedIndex].text;
-  let myCurrentPrice = Number(dropdownList.value);
-  let myStoredPrice = Number(localStorage.getItem("totalPrice"));
-  let myTotalPrice = myCurrentPrice + myStoredPrice;
-  alert(
-    myCurrentItem +
-      " added to your Cart. \nTotal price is $" +
-      myTotalPrice.toFixed(2)
-  );
-  localStorage.setItem("totalPrice", myTotalPrice.toFixed(2));
-}
 function jsDropdown() {
   let dropdownList = document.getElementById("dropdown");
   const listOfItems = [
@@ -30,16 +17,36 @@ function jsDropdown() {
     dropdownList.add(option);
   });
 }
+function addToCart() {
+  let dropdownList = document.getElementById("dropdown");
+  let myCurrentItem = dropdownList.options[dropdownList.selectedIndex].text;
+  let myCurrentPrice = Number(dropdownList.value);
+  let myStoredPrice = Number(localStorage.getItem("totalPrice")) || 0;
+  let myTotalPrice = myCurrentPrice + myStoredPrice;
+  alert(
+    myCurrentItem +
+      " added to your Cart. \nTotal price is $" +
+      myTotalPrice.toFixed(2)
+  );
+  localStorage.setItem("totalPrice", myTotalPrice.toFixed(2));
+}
 function updatePrice(price) {
   document.getElementById("current-price").innerHTML = "$" + price;
 }
 document.addEventListener("DOMContentLoaded", function () {
   jsDropdown();
-
   let dropdownList = document.getElementById("dropdown");
+  let savedDdSelection = localStorage.getItem("selectedItem");
+  if (savedDdSelection) {
+    dropdownList.value = savedDdSelection;
+    updatePrice(savedDdSelection);
+  } else {
+    let initialPrice = dropdownList.value;
+    updatePrice(initialPrice);
+  }
   dropdownList.addEventListener("change", function () {
     let itemPrice = dropdownList.value;
     updatePrice(itemPrice);
+    localStorage.setItem("selectedItem", itemPrice);
   });
 });
-//jsDropdown();
