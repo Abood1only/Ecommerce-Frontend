@@ -6,6 +6,22 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" type="image/x-icon" href="/images/oven2.jpg" />
   </head>
+  <div id="cart-box">
+    <button id="cart-icon" onclick="displayCart()">
+      <i class="fa-regular fa-cart-shopping"></i>
+      <span id="cart-total-items">0</span>
+    </button>
+    <div id="cart-hover-list">
+      <ul id="cart-items-list"></ul>
+      <p id="total">Total: $<span id="cart-total">0.00</span></p>
+    </div>
+  </div>
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <p id="modal-message"></p>
+      <button class="ok-button" onclick="closeModal()">OK</button>
+    </div>
+  </div>
   <body>
     <section>
       <h1 id="product-name">EASY OFF</h1>
@@ -68,10 +84,12 @@
     </div>
     <section>
       <footer id="copyright">
-        @ 2025 Copyright "Easy Off Oven Cleaner is a trusted brand under Reckitt
-        Benckiser"
+        &copy; <span id="year"></span> Copyright "Easy Off Oven Cleaner is a trusted brand under Reckitt Benckiser"
       </footer>
-    </section>
-    <script src="product.js"></script>
+      <script>
+        // Dynamically set the current year
+        document.getElementById("year").textContent = new Date().getFullYear();
+      </script>
+      <script src="product.js"></script>
   </body>
 </html>
