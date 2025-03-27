@@ -4,18 +4,26 @@
     <meta charset="UTF-8" />
     <title>Products - Capstone Project</title>
     <link rel="stylesheet" href="products.css" />
-    <link
-      rel="icon"
-      href="/Capstone-Project/images/logo.png"
-      type="image/x-icon"
-    />
+    <link rel="icon" href="/images/logo.png" type="image/x-icon" />
   </head>
   <body>
-    <header id="header"></header>
+    <header id="header">My Products</header>
+    <section id="container"></section>
+    <footer>
+      <p>&copy; 2023 Capstone Project. All rights reserved.</p>
+    </footer>
+    <template id="prod-template">
+      <div class="product">
+        <div class="prod-name"></div>
+        <div class="prod-image"><img class="img" src="" /></div>
+        <div class="prod-des"></div>
+        <div class="prod-id"></div>
+        <div class="prod-stock-quantity"></div>
+        <div class="prod-category-id"></div>
+        <div class="prod-price"></div>
+        <div class="prod-category-name"></div>
+      </div>
+    </template>
+    <script src="products.js"></script>
   </body>
-  <script src="products.js"></script>
-  <footer>
-    <template> </template>
-    <p>&copy; 2023 Capstone Project. All rights reserved.</p>
-  </footer>
 </html>
