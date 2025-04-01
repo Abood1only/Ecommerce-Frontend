@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="product.css">
+    <title>Product</title>
+  </head>
+  <body>
+    <h1>Product Details</h1>
+    <div class="container">
+      <div class="product-info">
+        <div id="productDetails" class="product-details">
+          <p id="prod-des"></p>
+          <p><strong>Stock Quantity:</strong> <span id="prod-stock-quantity"></span></p>
+          <p><strong>Category:</strong> <span id="prod-category-name"></span></p>
+          <p><strong>Starting Price:</strong> $<span id="productStartingPrice"></span></p>
+          <div id="varietiesSection">
+            <h3>Available Varieties:</h3>
+            <div id="dropdown" class="dropdown"></div>
+            <ul id="varietiesList" class="varieties-list"></ul>
+          </div>
+          <button class="buy-btn">Buy Now</button>
+        </div>
+      </div>
+    <script src="product.js"></script>
+  </body>
+</html>
