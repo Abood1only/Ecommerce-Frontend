@@ -31,6 +31,31 @@ if (productID) {
         } else {
           productDetails.innerHTML = "<p>Product not found!</p>";
         }
+        const buyNowButton = document.querySelector(".buy-btn");
+        if (buyNowButton) {
+          buyNowButton.addEventListener("click", function () {
+            const dropdown = document.getElementById("dropdown");
+            const selectedVariety = dropdown ? dropdown.value : null;
+            const productIDParam = `product_id=${productID}&variety=${selectedVariety}`;
+            const productName = data.name + (selectedVariety ? ` (${selectedVariety})` : "");
+            const productPrice = selectedVariety ? data.varieties.find((variety) => variety.name === selectedVariety).price : data.starting_at_price;
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            console.log(cart);
+            const existingProduct = cart.find((item) => item.product_id === productIDParam);
+            if (existingProduct) {
+              existingProduct.quantity += 1;
+            } else {
+              cart.push({
+                product_id: productIDParam,
+                name: productName,
+                price: productPrice,
+                quantity: 1,
+              });
+            }
+            localStorage.setItem("cart", JSON.stringify(cart));
+            window.location.href = "checkout.html";
+          });
+        }
       }
       displayProductDetails(data);
     })

@@ -3,9 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
     <link rel="stylesheet" href="checkout.css" />
-    <title>Document</title>
   </head>
-  <body></body>
-  <script src="checkout.js"></script>
+  <body>
+    <h1>Checkout</h1>
+    <div class="cart-container">
+      <div id="cart-items"></div>
+      <div id="total-price"></div>
+      <button id="checkout-btn">Proceed to Payment</button>
+    </div>
+    <div id="checkout-modal">
+      <div id="modal-overlay"></div>
+      <div class="modal-content">
+        <span id="close-modal">X</span>
+        <div id="order-summary">
+          <h3>Order Summary</h3>
+          <div id="order-items"></div>
+          <div>Total: $<span id="order-total"></span></div>
+        </div>
+        <div>
+          <br />
+          <label for="shipping-address">Shipping Address:</label>
+          <input type="text" id="shipping-address" placeholder="Enter shipping address" />
+        </div>
+        <div>
+          <br />
+          <label>Payment Method:</label>
+          <input type="radio" name="payment-method" value="CREDIT_CARD" /> Credit Card <input type="radio" name="payment-method" value="DEBIT_CARD" /> Debit Card <input type="radio" name="payment-method" value="PAYPAL" /> PayPal
+          <input type="radio" name="payment-method" value="CASH_ON_DELIVERY" /> Cash On Delivery
+        </div>
+        <br />
+        <button id="submit-order">Submit Your Order</button>
+      </div>
+    </div>
+    <script src="checkout.js"></script>
+  </body>
 </html>
