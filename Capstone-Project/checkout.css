@@ -1,0 +1,120 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: white;
+  padding: 20px;
+  background-color: #007bff;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.cart-container {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#checkout-btn {
+  margin-top: 20px;
+  padding: 12px 30px;
+  background-color: #28a745;
+  color: white;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#checkout-btn:hover {
+  background-color: #218838;
+}
+.cart-item {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+}
+.cart-item .item-name {
+  font-size: 1.2rem;
+  text-align: left;
+  margin: 0;
+}
+.cart-item .item-quantity {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+}
+.cart-item .item-price {
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: bold;
+  color: #007bff;
+}
+.cart-item .item-quantity button {
+  margin: 0 5px;
+}
+.cart-item .item-quantity .quantity {
+  font-weight: bold;
+}
+#checkout-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+#modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: block;
+}
+.modal-content {
+  background-color: rgb(207, 236, 253);
+  padding: 20px;
+  margin: 50px auto;
+  width: 60%;
+  max-width: 600px;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1001;
+}
+#close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
